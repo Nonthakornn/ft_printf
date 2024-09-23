@@ -17,11 +17,9 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
-int ft_printf(const char *str, ...);
-int ft_print_char(int c);
-int ft_print_str(char *str);
-
-
-
+//int ft_printf(const char *str, ...);
+int	ft_print_char(int c);
+int	ft_print_str(char *str);
+int	ft_print_int(int c);
 
 #endif
