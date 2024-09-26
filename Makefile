@@ -5,7 +5,10 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-SRCS_FILES = ft_print_char.c ft_print_str.c ft_print_int.c
+SRCS_FILES = ft_print_char.c ft_print_str.c ft_print_int.c \
+			ft_print_percent.c  ft_print_unsigned_int.c ft_print_hex.c \
+			ft_print_ptr.c ft_printf.c
+
 
 OBJ_FILES = $(SRCS_FILES:.c=.o)
 

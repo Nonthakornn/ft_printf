@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_unsigned_int.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nchencha <nchencha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 07:00:35 by nchencha          #+#    #+#             */
-/*   Updated: 2024/09/26 18:21:45 by nchencha         ###   ########.fr       */
+/*   Created: 2024/09/26 13:33:16 by nchencha          #+#    #+#             */
+/*   Updated: 2024/09/26 13:39:13 by nchencha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+int	ft_print_unsigned_int(unsigned int n)
+{
+	unsigned int	count;
 
-int	ft_printf(const char *str, ...);
-int	ft_print_char(int c);
-int	ft_print_str(char *str);
-int	ft_print_int(int c);
-int	ft_print_percent(void);
-int	ft_print_unsigned_int(unsigned int n);
-int	ft_print_hex(unsigned int n, const char c);
-int	ft_print_ptr(unsigned long long ptr);
-#endif
+	count = 0;
+	if (n > 9)
+	{
+		count += ft_print_unsigned_int(n / 10);
+		count += ft_print_unsigned_int(n % 10);
+	}
+	else
+		count += ft_print_char(n + '0');
+	return (count);
+}
+
+/*
+#include "ft_print_char.c"
+int main()
+{
+	ft_print_unsigned_int(20);
+}
+*/
