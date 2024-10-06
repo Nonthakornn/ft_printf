@@ -21,7 +21,7 @@ $(NAME):	$(OBJ_FILES)
 			$(CC) $(CFLAGS) -c $< -o $@
 
 clean:		
-			$(RM) $(OBJ_FILES) $(BOBJ_FILES)
+			$(RM) $(OBJ_FILES)
 
 fclean:		clean
 			$(RM) $(NAME)
