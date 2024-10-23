@@ -15,16 +15,19 @@ OBJ_FILES = $(SRCS_FILES:.c=.o)
 all:		$(NAME)
 
 $(NAME):	$(OBJ_FILES)
-			$(AR) $(NAME) $(OBJ_FILES)
+			@$(AR) $(NAME) $(OBJ_FILES)
+			@echo "Done building ft_printf"
 
 %.o:		%.c
-			$(CC) $(CFLAGS) -c $< -o $@
+			@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:		
-			$(RM) $(OBJ_FILES)
+			@$(RM) $(OBJ_FILES)
+			@echo "clean ft_printf"
 
 fclean:		clean
 			$(RM) $(NAME)
+			@echo "fclean ft_printf"
 
 re:			fclean all
 
